@@ -11,6 +11,12 @@ if ! command -v llm &> /dev/null; then
     exit 1
 fi
 
+# Check if yt-dlp command exists
+if ! command -v yt-dlp &> /dev/null; then
+    echo "Error: 'yt-dlp' command not found. Please install it first."
+    exit 1
+fi
+
 video_url="$1"
 echo "processing video $video_url"
 
@@ -35,31 +41,41 @@ Take a deep breath and think step by step about how to best accomplish this goal
 # STEPS
 - Read the complete youtube subtitle text carefully and deeply understand it
 - You should start with an introductory paragraph giving user a high level understanding of the topic.
-- Extract key points and insights from the input text and group them in to logical groups. 
-    - You can create 10-20 logical groups
-- For each group come up with logical group name. 
-    - Group name length should be 10-20 words long 
-    - Use group name the heading
-- For each logical group extract can have 5-10 key points
+- Extract key points and insights from the input text and group them in to logical groups. A group can have key points from different parts of the video 
+- You should it create 10-20 logical groups
+- Each group should a have logical group name that best describe the points covered in the group
+    - There can be 5-10 key points per group
     - Each key point should be detailed and upto 100 words
     - With each key point also mention the timestamp
+- End the summary with a motivational quote that goes with the video content.
 
 # OUTPUT FORMAT
 
-## Group Name 1
-1. Key point 1
-2. Key point 2
+Start with an high level summary.
 
-## Group Name 2
-1. Key point 3
-2. Key point 4
-3. Key point 5
-4. Key point 6
-5. Key point 7 
+## Group 1
+- Key point 1 (02:30)
+- Key point 1 (05:30)
+- Key point 1 (12:30)
+- Key point 1 (32:30)
+
+## Group 2
+- Key point 1 (04:30)
+- Key point 1 (08:30)
+- Key point 1 (50:30)
+- Key point 1 (52:30)
+
+## Group 3
+- Key point 1 (31:30)
+- Key point 1 (33:30)
+- Key point 1 (35:30)
+
+Let me end the summary with a quote: "Quote 1"
 
 # OUTPUT
 
-1. Do not create groups with name Group Name 1, Group Name 2
+1. Do not start group name with Group 1 or Group 2 suffixes
+2. Make sure you have 5-10 key points per group
 
 # INPUT
 EOF

@@ -40,37 +40,32 @@ prompt=$(cat <<EOF
 # IDENTITY and PURPOSE
 You are an experienced software architect. You take as input code content of a Git repository and you generate an architecture document.
 Take a deep breath and think step by step about how to best accomplish this goal using the following steps.
-Be as much as detailed as required.
 
 # STEPS
 
-1. **Title and Introduction**
-    - Start with a clear title (e.g., `# Architecture`) at the top of the document.
-    - Write an introductory paragraph describing the purpose of the document. Include a brief statement about the system being discussed and its relevance for new developers or users.
-    - List the technology stack used by the application
-2. **High-Level Overview**
+- Read the complete input carefully and deeply understand it
+- Combine all of your understanding of the project architecture in a section called HIGH LEVEL UNDERSTANDING.
     - Provide a high-level overview of the architecture. Use Mermaid diagram to illustrate the overall architecture and data flow.
-    - Generate sequence diagram to help user understand the data flow
-    - Describe the input and output of the system. Explain how data is structured and what the system does with the incoming data.
-3. **Detailed Breakdown of Components**
-    - Create sections for each major component of the system. Use headings (e.g., `## Component Name`) to clearly label each section.
-    - In each section:
+- List the technology stack used by the application in a section called TECHNOLOGY STACK
+- Create a section called DESIGN DECISIONS where you discuss different design decisions project creators took
+- Create a section GETTING STARTED that guides user in a step by step manner on how to use the project
+- Create a section called ENTRY POINTS that tells user how to get started with the code base. This should help new developers learn navigate the code faster
+- Create a section called COMPONENTS that describe major components of the system
+    - Use headings (e.g., `### Component Name`) to clearly label each section.
+    - For each component:
         - Describe the purpose of the component.
         - Explain the key data structures or algorithms used.
         - Mention any important design patterns or architectural styles employed (like microservices, event-driven architecture, etc.).
         - Highlight any architectural invariants or rules that govern the component.
-4. **Code Map**. 
-    - Be detailed in this section. Keep each point between 5 to 10 lines.
+- Create a section called CODE MAP
     - Provide a brief description of the directory structure, if applicable. Highlight important directories and their functions.
     - Help user understand API of the application
-5. **Cross-Cutting Concerns**.
-    - Be detailed in this section. Keep each point between 5 to 10 lines.
-    - Include a section discussing cross-cutting concerns such as:
-        - Build tool and release management
-        - Testing strategies and methods
-        - Error handling strategies
-        - Observability features and performance metrics
-6. End the summary with thank you note for a reader that motivates them to use this project.
+- Create a section called CROSS CUTTING CONCERNS to detail out following concerns. You can add any other cross cutting concern as well.
+    - Build tool and release management
+    - Testing strategies and methods
+    - Error handling strategies
+    - Observability features and performance metrics
+6. End the document with thank you note for a reader that motivates them to use this project.
 
 # INPUT
 EOF

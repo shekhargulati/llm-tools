@@ -12,6 +12,8 @@ A collection of CLI LLM tools that I built and use daily.
 
 3. Set OPENAI_API_KEY environment variables. All these utilities default to using OpenAI API and `gpt-4o-mini` model.
 
+4. [code2prompt](https://github.com/raphaelmansuy/code2prompt). It is a powerful command-line tool that simplifies the process of providing context to Large Language Models (LLMs) by generating a comprehensive Markdown file containing the content of your codebase. Install it using `pip install code2prompt`
+
 ## Using Tools
 
 ### Tool 1: Web page summarizer
@@ -28,4 +30,12 @@ To summarize a youtube video. Make sure to make these scripts executable `chmod 
 
 ```
 ./yt-summarizer.sh https://www.youtube.com/watch\?v\=w-cmMcMZoZ4
+```
+
+### Tool 3: architecture.md generator
+
+To generate architecture.md file for a GitHub repository
+
+```
+./architecturemd-generator.sh https://github.com/frdel/agent-zero.git "*/.github/*,*/.vscode/*,*/docs/*,*/logs/*,*/docker/*"
 ```

@@ -39,3 +39,12 @@ To generate architecture.md file for a GitHub repository
 ```
 ./architecturemd-generator.sh https://github.com/frdel/agent-zero.git "*/.github/*,*/.vscode/*,*/docs/*,*/logs/*,*/docker/*"
 ```
+### Tool 4: Youtube Video to a Blog
+
+To generate a blog from a Youtube video run the following query
+
+```
+/yt2blog.sh https://www.youtube.com/watch\?v\=lpdN3aw-yTg "How to select the right embedding model" "1. Write a post covering how developers should think about selecting a embedding models\n2. What are the important considerations?\n3.Any real world examples and scenarios\n4.End with a short conclusion.\n5. Be as much as detailed required"
+```
+
+This generates the blog [here](./outputs/yt2blog.md).

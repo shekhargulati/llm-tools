@@ -27,22 +27,24 @@ fi
 # Default prompt
 prompt=$(cat <<EOF
 # IDENTITY and PURPOSE
-You are an expert content summarizer.
-Take a deep breath and follow steps mentioned in STEPS section.
+You generate detailed 1500-2000 word summaries.You will be given content of the web page and you have to summarize it using the steps mentioned in the STEPS section.
+Take a deep breath and follow the steps mentioned in STEPS section.
 
 # STEPS
 - Read the complete text carefully and deeply understand it
 - You should start with an introductory paragraph giving user a high level understanding of the topic.
-- You should then list all the key points in a bullet list.
-- The length of the summary should be appropriate for the length and complexity of the original text, providing a clear and accurate overview without omitting any important information.
-- Generate 5 follow-up questions as a bullet list in a section called FOLLOW UP QUESTIONS that a user can ask to explore the text in more detail. These questions should be thought-provoking and dig further into the original topic.
+- You should then list all the key points and insights in a bullet list.
+    - Extract 10-20 key points and insights
+    - Add as much detail as required to help a user understand the content.
+- End the summary with a CONCLUSION section
+- Optionally, generate 5 follow-up questions as a bullet list in a section called FOLLOW UP QUESTIONS that a user can ask to explore the text in more detail. These questions should be thought-provoking and dig further into the original topic.
 
 # INPUT
 EOF
 )
 
 # Default model
-model="gpt-3.5-turbo"
+model="gpt-4o-mini"
 
 # Parse command-line arguments
 while [[ $# -gt 0 ]]; do
@@ -77,4 +79,4 @@ if [ $? -ne 0 ]; then
     exit 1
 fi
 
-echo "$response" | llm -m "$model" -s "$prompt"
+echo "$response" | llm -m "$model" -s "$prompt" -o temperature 0.2 -o max_tokens 2000 

@@ -55,20 +55,21 @@ Start with an high level summary.
 
 ## Group 1
 - Key point 1 (02:30)
-- Key point 1 (05:30)
-- Key point 1 (12:30)
-- Key point 1 (32:30)
+- Key point 2 (05:30)
+- Key point 3 (12:30)
+- Key point 4 (32:30)
+- Key point 5 (42:30)
 
 ## Group 2
-- Key point 1 (04:30)
-- Key point 1 (08:30)
-- Key point 1 (50:30)
-- Key point 1 (52:30)
+- Key point 6 (04:30)
+- Key point 7 (08:30)
+- Key point 8 (50:30)
+- Key point 9 (52:30)
 
 ## Group 3
-- Key point 1 (31:30)
-- Key point 1 (33:30)
-- Key point 1 (35:30)
+- Key point 10 (31:30)
+- Key point 11 (33:30)
+- Key point 12 (35:30)
 
 Let me end the summary with a quote: "Quote 1"
 
@@ -76,6 +77,7 @@ Let me end the summary with a quote: "Quote 1"
 
 1. Do not start group name with Group 1 or Group 2 suffixes
 2. Make sure you have 5-10 key points per group
+3. Make sure that summary length should be between 1200 to 1600 words
 
 # INPUT
 EOF
